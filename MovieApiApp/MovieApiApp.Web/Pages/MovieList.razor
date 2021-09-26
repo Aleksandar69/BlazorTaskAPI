@@ -1,0 +1,30 @@
+﻿@page "/"
+@inherits MovieListBase
+
+<h3>MovieList</h3>
+
+<input type="text" @bind-value="@QuerySearch" @oninput="@((e) => { QuerySearch=(string)e.Value;})"/>
+
+<button @onclick="SearchMovies">Search movies</button>
+
+@if(MovieList != null) { 
+
+    <div>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Overview</th>
+            </tr>
+            @foreach (var movie in MovieList)
+            {
+                <tr>
+                    <td>@movie.id</td>
+                    <td>@movie.title</td>
+                    <td>@movie.overview</td>
+                    <a href="@($"/moviedetails/{movie.id}")" class="btn btn-primary">View</a>
+                </tr>
+            }
+        </table>
+    </div>
+    }

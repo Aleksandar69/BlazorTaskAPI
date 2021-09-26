@@ -1,0 +1,13 @@
+﻿@page "/moviedetails/{id}"
+@inherits MovieDetailsBase
+
+<h3>MovieDetails</h3>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Movie.original_title</h5>
+        <p class="card-text">@Movie.overview</p>
+    </div>
+</div>
+
+<a href="/">Back</a>
